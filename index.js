@@ -10,12 +10,35 @@ function longestWord(sentence) {
   // turn sentence into an array
   const array = sentence.split(' ');
   console.log(array);
+
+  // const replaced = str.replace(regex, "freeCodeCamp");
+  // remove all punctuation
+  function removePunctuation(str) {
+    return str
+      .split('')
+      .filter((char) => {
+        return /[a-zA-Z0-9 ]/.test(char);
+      })
+      .join('');
+  }
+  const cleanArray = array.map((x) => removePunctuation(x));
+  console.log(cleanArray);
+
+  // const regex = /[a-zA-Z]+/
+  // const processedArray = array.map((x) => {
+  // return x.replace(regex)
+  // })
+  //console.log(processedArray)
   // turn array of string into numbers
-  const numbers = array.map((x) => Number(x.length));
+  const numbers = cleanArray.map((x) => Number(x.length));
   console.log(numbers);
   // find the longest
   const max = Math.max(...numbers);
   console.log(max);
+  console.log(numbers.indexOf(max));
+  const index = numbers.indexOf(max);
+  console.log(array[index]);
+  return cleanArray[index];
   //const longest = numbers.reduce((a,b) => a < b)
   //console.log(longest)
 
