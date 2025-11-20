@@ -5,7 +5,6 @@
 // Only letters (a-z, case-insensitive) count toward the word's length.
 // If there are multiple words with the same length, return the first one that appears.
 // Return the word as it appears in the given string, with punctuation removed.
-
 function longestWord(sentence) {
   console.log(sentence);
   // turn sentence into an array
@@ -15,16 +14,41 @@ function longestWord(sentence) {
   const numbers = array.map((x) => Number(x.length));
   console.log(numbers);
   // find the longest
+  const max = Math.max(...numbers);
+  console.log(max);
+  //const longest = numbers.reduce((a,b) => a < b)
+  //console.log(longest)
+
   //const highest = number.reduce((acc, total) => {
   //return acc >= total
   //}
   //)
-  console.log(highest);
+  //console.log(highest)
   //console.log(Math.max(...array))
   //array.map((x) => {
   // check the lengths of each array items
-  console.log(x.length);
+  // console.log(x.length)
   // return the longest first instance
-  // })
-  return sentence;
+  //  })
+  // return sentence;
 }
+
+// const ages = [3, 10, 18, 20];
+
+// ages.findIndex(checkAge);
+
+// function checkAge(age) {
+//  return age > 18;
+// }
+
+// function highest(a) {
+//  return Math.max(numbers)
+// }
+
+// console.log(Math.max(1, 3, 2));
+// Expected output: 3
+
+// const array = [1, 3, 2];
+
+// console.log(Math.max(...array));
+// Expected output: 3
